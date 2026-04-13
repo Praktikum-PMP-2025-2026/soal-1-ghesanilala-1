@@ -18,7 +18,11 @@ int proses(){
     int rad, hour;
     float s;
     scanf("%d %f %d %d", &i, &s, &rad, &hour);
-    s= 371/10;
+    if((i<1 || i>3) && rad<0 && (hour<0 || hour>23)){
+        return 0;
+    }
+    else{
+           s= 371/10;
             if(rad >= 6 ){
                 printf("TOLAK\n");
             }
@@ -31,7 +35,7 @@ int proses(){
             else if(i==1){
                 printf("MASUK\n");
             }
-            else if(i==2 && (rad<=2) && (8<hour<18)){
+            else if(i==2 && (rad<=2) && (8<hour<18) && (s<390)){
                 printf("MASUK\n");
             }
             else if(i==2){
@@ -44,6 +48,8 @@ int proses(){
                 printf("TOLAK\n");
             }
         }
+    }
+ 
 
 //main cuma manggil fungsi selebihnya dilakukan di fungsi lain
  int main() {
